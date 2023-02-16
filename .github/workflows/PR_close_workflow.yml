@@ -1,6 +1,10 @@
 name: PR_close_workflow
 
 on:
+  push:
+    branches:
+      - main
+      
   pull_request:
     types: [closed]
     branches:
@@ -9,7 +13,6 @@ on:
 
 jobs:
   PR_close_workflow:
-    if: github.event.pull_request.merged == true
     name: PR_close_workflow
     runs-on: ubuntu-latest
 
